@@ -1,0 +1,41 @@
+.wick {
+  fill: #e6e7e8;
+}
+.flame {
+  fill: url(#flameGradient);
+}
+.orangeWax {
+  fill: url(#orangeWaxGradient);
+}
+
+.redWax {
+  fill: url(#redWaxGradient);
+}
+
+.yellowWax {
+  fill: url(#yellowWaxGradient);
+}
+
+.greenWax {
+  fill: url(#greenWaxGradient);
+}
+
+.tealWax {
+  fill: url(#tealWaxGradient);
+}
+
+.lightBlueWax {
+  fill: url(#lightBlueWaxGradient);
+}
+
+.darkBlueWax {
+  fill: url(#darkBlueWaxGradient);
+}
+
+.purpleWax {
+  fill: url(#purpleWaxGradient);
+}
+
+.pinkWax {
+  fill: url(#pinkWaxGradient);
+}
