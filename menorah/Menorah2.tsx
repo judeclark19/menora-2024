@@ -1,4 +1,3 @@
-import candleStyles from "./styles/candles.module.css";
 import stemStyles from "./styles/stem.module.css";
 import candleBaseStyles from "./styles/candleBases.module.css";
 import branchStyles from "./styles/branches.module.css";
@@ -11,7 +10,15 @@ import LightBlueCandle from "./candles/LightBlueCandle";
 import DarkBlueCandle from "./candles/DarkBlueCandle";
 import PurpleCandle from "./candles/PurpleCandle";
 import PinkCandle from "./candles/PinkCandle";
+import { useState } from "react";
 const Menorah2 = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleDrag = (x: number, y: number) => {
+    console.log("drag", x, y);
+    setPosition({ x, y });
+  };
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +58,7 @@ const Menorah2 = () => {
         <stop offset="1" style={{ stopColor: "#ffeec4" }} />
       </linearGradient>
 
-      <RedCandle />
+      <RedCandle position={position} onDrag={handleDrag} />
       <OrangeCandle />
       <YellowCandle />
       <GreenCandle />

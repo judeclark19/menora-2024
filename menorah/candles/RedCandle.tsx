@@ -1,8 +1,37 @@
+"use client";
+
+import { useDrag } from "react-dnd";
+import { useRef, useEffect, Ref } from "react";
 import candleStyles from "../styles/candles.module.css";
 
-const RedCandle = () => {
-  return (
-    <g>
+const RedCandle = ({
+  position,
+  onDrag
+}: {
+  position: { x: number; y: number };
+  onDrag: (x: number, y: number) => void;
+}) => {
+  const [collected, drag, dragPreview] = useDrag(() => ({
+    type: "candle",
+    item: { type: "red" }
+  }));
+
+  return collected.isDragging ? (
+    <div ref={dragPreview} />
+  ) : (
+    // <div ref={drag} {...collected}>
+    <g
+      ref={drag as unknown as Ref<SVGGElement>}
+      //   ref={svgRef}
+      style={{
+        pointerEvents: "all",
+        cursor: "grab",
+        transform: `translate(${position.x}px, ${position.y}px)`
+      }}
+      onClick={() => {
+        console.log("Red candle clicked!");
+      }}
+    >
       {/* red candle */}
       <path
         className={candleStyles.wick}
@@ -37,6 +66,7 @@ const RedCandle = () => {
         points="77.5,327.2 56.3,327.2 59,89.9 74.7,89.9    "
       />
     </g>
+    // </div>
   );
 };
 
