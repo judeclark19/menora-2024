@@ -116,7 +116,14 @@ const Home = observer(() => {
         </div>
 
         <p>
-          Created by <a href="https://github.com/judeclark19">Jude Clark</a>
+          Created by{" "}
+          <a href="https://github.com/judeclark19" target="_blank">
+            Jude Clark
+          </a>
+          . View{" "}
+          <a href="https://github.com/judeclark19/menorah-2024" target="_blank">
+            Github Repo
+          </a>
         </p>
       </div>
     </div>
