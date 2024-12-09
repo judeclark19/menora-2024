@@ -3,7 +3,8 @@
 
 https://virtual-menorah-2024.netlify.app/
 
-![Menorah set for night 3 of Hanukka](https://github.com/user-attachments/assets/cde036e6-e01b-4219-9ec7-9526a2746555)
+![Menorah set for night 3 of Hanukka](https://github.com/user-attachments/assets/27b4540e-9654-4362-a329-c6bd326c3b69)
+
 
 ### Credits
 
