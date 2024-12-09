@@ -102,7 +102,14 @@ const Home = observer(() => {
             }}
           >
             Extinguish
-            {/* <span id="extinguish-btn">Extinguish</span> */}
+          </button>
+          <button
+            className="reset-btn"
+            onClick={() => {
+              menorahState.light();
+            }}
+          >
+            Light
           </button>
           <button
             className="reset-btn"
