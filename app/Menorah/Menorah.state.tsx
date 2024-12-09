@@ -65,6 +65,26 @@ class MenorahState {
     ];
   }
 
+  private sequentialAction(
+    indices: number[],
+    action: (candle: Candle) => void,
+    delay: number,
+    callback?: () => void
+  ) {
+    const performAction = (index: number) => {
+      if (index < indices.length) {
+        setTimeout(() => {
+          action(this.candles[indices[index]]);
+          performAction(index + 1);
+        }, delay);
+      } else if (callback) {
+        callback();
+      }
+    };
+
+    performAction(0);
+  }
+
   get litCandlesCount(): number {
     return this.candles.filter((candle) => candle.isLit).length;
   }
@@ -72,15 +92,50 @@ class MenorahState {
   night(num: number) {
     this.candles.forEach((candle) => {
       candle.setIsVisible(false);
+      candle.setIsLit(false);
     });
 
-    for (let i = 0; i < num; i++) {
-      this.candles[i].setIsVisible(true);
-      this.candles[i].setIsLit(true);
-    }
+    const visibleIndices = Array.from({ length: num }, (_, i) => i);
+    this.sequentialAction(
+      visibleIndices,
+      (candle) => candle.setIsVisible(true),
+      300,
+      () => {
+        this.candles[8].setIsVisible(true);
+        setTimeout(() => {
+          this.candles[8].setIsLit(true);
+          this.sequentialAction(
+            visibleIndices,
+            (candle) => candle.setIsLit(true),
+            300
+          );
+        }, 800);
+      }
+    );
+  }
 
-    this.candles[8].setIsLit(true);
-    this.candles[8].setIsVisible(true);
+  light() {
+    if (this.candles[8].isVisible) {
+      this.candles[8].setIsLit(true);
+      setTimeout(() => {
+        this.lightVisibleCandles();
+      }, 800);
+    } else {
+      this.lightVisibleCandles();
+    }
+  }
+
+  private lightVisibleCandles() {
+    const visibleIndices = this.candles
+      .slice(0, 8)
+      .map((candle, index) => (candle.isVisible ? index : -1))
+      .filter((index) => index !== -1);
+
+    this.sequentialAction(
+      visibleIndices,
+      (candle) => candle.setIsLit(true),
+      300
+    );
   }
 
   extinguish() {
