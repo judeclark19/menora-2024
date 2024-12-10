@@ -138,7 +138,8 @@ class MenorahState {
     const visibleIndices = this.candles
       .slice(0, 8)
       .map((candle, index) => (candle.isVisible ? index : -1))
-      .filter((index) => index !== -1);
+      .filter((index) => index !== -1)
+      .reverse(); // Reverse the order for descending lighting
 
     this.sequentialAction(
       visibleIndices,
