@@ -1,11 +1,10 @@
 import { observer } from "mobx-react-lite";
-import { useState } from "react";
 import menorahState from "../Menorah.state";
+import { useState } from "react";
 
-const Base1 = observer(() => {
-  const candle = menorahState.candles[0];
+const Base6 = observer(() => {
+  const candle = menorahState.candles[6];
   const [isHovered, setIsHovered] = useState(false);
-
   return (
     <g
       style={{
@@ -20,21 +19,24 @@ const Base1 = observer(() => {
         candle.setIsVisible(!candle.isVisible);
       }}
     >
-      <polygon fill="#967444" points="435,578 470,578 477,538.7 428,538.7   " />
       <polygon
         fill="#967444"
-        points="429.5,498.7 475.5,498.7 484.7,483.1 420.3,483.1   "
+        points="535.7,578 570.7,578 577.7,538.7 528.6,538.7   "
+      />
+      <polygon
+        fill="#967444"
+        points="530.2,498.7 576.1,498.7 585.4,483.1 521,483.1   "
       />
       <path
         fill="#AD884D"
-        d="M477.4,518.7h-49.7c-2.6,0-4.8,2.1-4.8,4.8V534c0,2.6,2.1,4.8,4.8,4.8h49.7c2.6,0,4.8-2.1,4.8-4.8v-10.4    C482.1,520.9,480,518.7,477.4,518.7z"
+        d="M578,518.7h-49.7c-2.6,0-4.8,2.1-4.8,4.8V534c0,2.6,2.1,4.8,4.8,4.8H578c2.6,0,4.8-2.1,4.8-4.8v-10.4    C582.8,520.9,580.7,518.7,578,518.7z"
       />
       <path
         fill="#BC9357"
-        d="M477.4,498.7h-49.7c-2.6,0-4.8,2.1-4.8,4.8V514c0,2.6,2.1,4.8,4.8,4.8h49.7c2.6,0,4.8-2.1,4.8-4.8v-10.4    C482.1,500.9,480,498.7,477.4,498.7z"
+        d="M578,498.7h-49.7c-2.6,0-4.8,2.1-4.8,4.8V514c0,2.6,2.1,4.8,4.8,4.8H578c2.6,0,4.8-2.1,4.8-4.8v-10.4    C582.8,500.9,580.7,498.7,578,498.7z"
       />
     </g>
   );
 });
 
-export default Base1;
+export default Base6;

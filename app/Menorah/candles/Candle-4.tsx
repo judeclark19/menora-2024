@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 
 const Candle4 = observer(() => {
   const [isHovered, setIsHovered] = useState(false);
-  const candle = menorahState.candles[3];
+  const candle = menorahState.candles[4];
   return (
     <g
       style={{

@@ -1,21 +1,21 @@
 import { observer } from "mobx-react-lite";
-import Base1 from "./bases/Base1";
-import Base2 from "./bases/Base2";
-import Base3 from "./bases/Base3";
-import Base4 from "./bases/Base4";
-import Base5 from "./bases/Base5";
-import Base6 from "./bases/Base6";
-import Base7 from "./bases/Base7";
-import Base8 from "./bases/Base8";
+import Base7 from "./bases/Base-7";
+import Base6 from "./bases/Base-6";
+import Base5 from "./bases/Base-5";
+import Base4 from "./bases/Base-4";
+import Base3 from "./bases/Base-3";
+import Base2 from "./bases/Base-2";
+import Base1 from "./bases/Base-1";
+import Base0 from "./bases/Base-0";
 import ShamashBase from "./bases/ShamashBase";
-import Candle1 from "./candles/Candle1";
-import Candle2 from "./candles/Candle2";
-import Candle3 from "./candles/Candle3";
-import Candle4 from "./candles/Candle4";
-import Candle5 from "./candles/Candle5";
-import Candle6 from "./candles/Candle6";
-import Candle7 from "./candles/Candle7";
-import Candle8 from "./candles/Candle8";
+import Candle7 from "./candles/Candle-7";
+import Candle6 from "./candles/Candle-6";
+import Candle5 from "./candles/Candle-5";
+import Candle4 from "./candles/Candle-4";
+import Candle3 from "./candles/Candle-3";
+import Candle2 from "./candles/Candle-2";
+import Candle1 from "./candles/Candle-1";
+import Candle0 from "./candles/Candle-0";
 import Shamash from "./candles/Shamash";
 import Loops from "./Loops";
 import Stem from "./Stem";
@@ -43,26 +43,28 @@ const Menorah = observer(() => {
           <rect x="832.5" y="480.5" fill="#DDAB6F" width="35" height="22.6" />
           <rect x="832.5" y="1131.4" fill="#BC9357" width="35" height="22.6" />
           <Loops />
-          <Base1 />
-          <Base2 />
-          <Base3 />
+
+          <Base7 />
+          <Base6 />
+          <Base5 />
           <Base4 />
           <ShamashBase />
-          <Base5 />
-          <Base6 />
-          <Base7 />
-          <Base8 />
+          <Base3 />
+          <Base2 />
+          <Base1 />
+          <Base0 />
 
           <Stem />
-          <Candle1 />
-          <Candle2 />
-          <Candle3 />
+
+          <Candle7 />
+          <Candle6 />
+          <Candle5 />
           <Candle4 />
           <Shamash />
-          <Candle5 />
-          <Candle6 />
-          <Candle7 />
-          <Candle8 />
+          <Candle3 />
+          <Candle2 />
+          <Candle1 />
+          <Candle0 />
         </g>
       </g>
     </svg>

@@ -53,14 +53,14 @@ class MenorahState {
     makeAutoObservable(this);
 
     this.candles = [
-      new Candle("452.5"),
-      new Candle("553.2"),
-      new Candle("652.3"),
-      new Candle("751.5"),
-      new Candle("948.5"),
-      new Candle("1047.7"),
-      new Candle("1146.8"),
       new Candle("1247.5"),
+      new Candle("1146.8"),
+      new Candle("1047.7"),
+      new Candle("948.5"),
+      new Candle("751.5"),
+      new Candle("652.3"),
+      new Candle("553.2"),
+      new Candle("452.5"),
       new Candle("850.1", "221.5") // shamash
     ];
   }
@@ -96,20 +96,29 @@ class MenorahState {
     });
 
     const visibleIndices = Array.from({ length: num }, (_, i) => i);
+
     this.sequentialAction(
       visibleIndices,
       (candle) => candle.setIsVisible(true),
       300,
       () => {
-        this.candles[8].setIsVisible(true);
+        // Add a 300ms delay after the last visible candle
         setTimeout(() => {
-          this.candles[8].setIsLit(true);
-          this.sequentialAction(
-            visibleIndices,
-            (candle) => candle.setIsLit(true),
-            300
-          );
-        }, 800);
+          this.candles[8].setIsVisible(true);
+
+          // Add another delay before lighting the Shamash
+          setTimeout(() => {
+            this.candles[8].setIsLit(true);
+
+            // Then sequentially light the visible candles in reverse order
+            const descendingIndices = [...visibleIndices].reverse();
+            this.sequentialAction(
+              descendingIndices,
+              (candle) => candle.setIsLit(true),
+              300
+            );
+          }, 800); // Delay before lighting the Shamash
+        }, 300); // 300ms delay after the last candle becomes visible
       }
     );
   }
