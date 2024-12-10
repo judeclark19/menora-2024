@@ -118,7 +118,6 @@ const Home = observer(() => {
             }}
           >
             Reset
-            {/* <span id="reset-btn">Reset</span> */}
           </button>
         </div>
 

@@ -2,9 +2,9 @@ import { observer } from "mobx-react-lite";
 import menorahState from "../Menorah.state";
 import { useState } from "react";
 
-const Candle7 = observer(() => {
+const Candle = observer(() => {
   const [isHovered, setIsHovered] = useState(false);
-  const candle = menorahState.candles[6];
+  const candle = menorahState.candles[1];
   return (
     <g
       style={{
@@ -54,4 +54,4 @@ const Candle7 = observer(() => {
   );
 });
 
-export default Candle7;
+export default Candle;

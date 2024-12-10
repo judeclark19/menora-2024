@@ -54,6 +54,7 @@
   font-family: "David Libre", serif;
   padding: 2rem;
   transition: background-color 2s ease;
+  overflow: hidden;
 }
 
 .content-wrapper {
